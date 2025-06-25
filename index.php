@@ -1,0 +1,72 @@
+<?php
+// index.php - Halaman utama website Arbana Hijab
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arbana Hijab - Menemukan cerita dan gaya bersama Arbana 🦋 Karena hijabmu adalah ceritamu 🌻">
+  <title>Arbana Hijab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto p-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-600">Arbana Hijab</h1>
+      <nav class="space-x-4">
+        <a href="#beranda" class="hover:text-pink-500">Beranda</a>
+        <a href="#produk" class="hover:text-pink-500">Produk</a>
+        <a href="#tentang" class="hover:text-pink-500">Tentang</a>
+        <a href="#kontak" class="hover:text-pink-500">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="beranda" class="bg-pink-100 py-20 text-center">
+    <h2 class="text-4xl font-bold mb-4">Selamat Datang di Arbana Hijab</h2>
+    <p class="text-lg max-w-xl mx-auto">Menemukan cerita dan gaya bersama Arbana 🦋 Karena hijabmu adalah ceritamu 🌻</p>
+  </section>
+
+  <section id="produk" class="py-16 max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-8">Koleksi Terbaru</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <?php
+      $produk = [
+        ["nama" => "Hijab Paris Jadul", "gambar" => "img/hijab1.jpg", "deskripsi" => "Mudah diatur."],
+        ["nama" => "Earab Inner", "gambar" => "img/hijab2.jpg", "deskripsi" => "Nyaman dan praktis."],
+        ["nama" => "Pashmina Kaos", "gambar" => "img/hijab3.jpg", "deskripsi" => "Hijab panjang bahan adem."]
+      ];
+      foreach ($produk as $item) {
+        echo "<div class='bg-white shadow-md rounded-2xl p-6'>";
+        echo "<img src='{$item['gambar']}' alt='{$item['nama']}' class='w-full h-40 object-cover rounded mb-4'>";
+        echo "<h4 class='text-xl font-semibold mb-2'>{$item['nama']}</h4>";
+        echo "<p class='text-sm text-gray-600'>{$item['deskripsi']}</p>";
+        echo "<a href='https://wa.me/6285717915185' class='text-pink-600 mt-3 inline-block'>Pesan Sekarang</a>";
+        echo "</div>";
+      }
+      ?>
+    </div>
+  </section>
+
+  <section id="tentang" class="bg-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Tentang Arbana</h3>
+      <p class="text-gray-700">Arbana Hijab adalah new brand lokal yang menghadirkan hijab berkualitas tinggi, nyaman digunakan, dan cocok untuk semua kalangan. Kami mendukung UMKM dan pemberdayaan perempuan Indonesia.</p>
+    </div>
+  </section>
+
+  <section id="kontak" class="bg-pink-50 py-16">
+    <div class="max-w-xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Hubungi Kami</h3>
+      <p class="mb-2">Email: info@arbanahijab.com</p>
+      <p class="mb-4">WhatsApp: <a href="https://wa.me/6285717915185" class="text-pink-600">085717915185</a></p>
+      <iframe class="w-full h-64 rounded-2xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4358.92878663546!2d108.23138392234736!3d-7.486056378208823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65fb0015f4ea69%3A0x2ac1067f9f0b9bd1!2sLM%20GaRaGe%20028!5e0!3m2!1sid!2sid!4v1750847658847!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-4 text-center">
+    <p>&copy; 2025 Arbana Hijab. All rights reserved.</p>
+  </footer>
+</body>
+</html>
